@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)http://localhost:9000/gitpitch/desktop?p=decomposing-stories#/ -->
+<html class="js-focus-visible" data-js-focus-visible="" crosspilot=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <title>GitPitch Desktop</title>
+    <meta content="The Markdown Presentation Service on Git." name="description">
+    <meta content="Markdown, Presentation, GitHub, GitLab, Bitbucket, PITCHME" name="keywords">
+    
+    
+<link href="./decomposing-user-stories_files/reveal.css" rel="stylesheet" type="text/css">
+
+
+<link href="./decomposing-user-stories_files/fonts.css" rel="stylesheet" type="text/css">
+
+<link href="./decomposing-user-stories_files/simple.css" rel="stylesheet" type="text/css" id="theme">
+
+<link href="./decomposing-user-stories_files/title-footer-mod.css" rel="stylesheet" type="text/css" id="theme">
+
+<link href="./decomposing-user-stories_files/paper.css" rel="stylesheet" type="text/css">
+
+
+<link href="./decomposing-user-stories_files/reveal-line-numbers-mod.css" rel="stylesheet" type="text/css">
+
+<link href="./decomposing-user-stories_files/pojoaque.css" rel="stylesheet" type="text/css">
+<link href="./decomposing-user-stories_files/octicons.css" rel="stylesheet" type="text/css">
+<link href="./decomposing-user-stories_files/fa-all.min.css" rel="stylesheet" type="text/css">
+<link href="./decomposing-user-stories_files/fa-v4-shims.min.css" rel="stylesheet" type="text/css">
+<link href="./decomposing-user-stories_files/twitter.min.css" rel="stylesheet" type="text/css">
+<link href="./decomposing-user-stories_files/asciinema-player.css" rel="stylesheet" type="text/css">
+<link href="./decomposing-user-stories_files/pitchcore.css" rel="stylesheet" type="text/css">
+
+
+
+
+<link href="./decomposing-user-stories_files/pitch.css" rel="stylesheet" type="text/css">
+<link href="./decomposing-user-stories_files/pitchmenu.css" rel="stylesheet" type="text/css">
+
+
+<link href="./decomposing-user-stories_files/pitchbarlight.css" rel="stylesheet" type="text/css">
+
+
+<link href="./decomposing-user-stories_files/pitchcode.css" rel="stylesheet" type="text/css">
+<link href="./decomposing-user-stories_files/pitchpro.css" rel="stylesheet" type="text/css">
+
+    
+
+<style>
+.spaced li
+{
+  margin: 0 0 10px 0;
+}
+
+.shadow
+{
+  box-shadow: 0 14px 20px 0 rgba(0, 0, 0, 0.2), 0 10px 24px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.headline h2
+{
+  color: white;
+  letter-spacing: 0.05em;
+  font-variant: small-caps;
+}
+
+.reveal section img
+{
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.reveal a
+{
+  color: white;
+}
+
+.reveal a:hover
+{
+  color: white;
+  font-weight: bold;
+}
+
+.boxed-text-left p#boxed-text
+{
+  text-align: left;
+  font-size: .6em
+}
+
+.color-text-right
+{
+  right: -7em
+}
+
+.color-text-left
+{
+  left: -2em
+}
+
+.custom-boxed-orange li::before
+{
+  color: #fff;
+  background-color: #E27924;
+}
+
+.list-square-bullets
+{
+  list-style-type: square !important;
+}
+
+.list-spaced-bullets li
+{
+  margin-bottom: 1em;
+}
+
+</style>
+
+
+    
+    
+<script>
+if ("WebSocket" in window) {
+
+    var ws = new WebSocket("ws://localhost:9000/pitchme/watch");
+
+    ws.onopen = function() { };
+    ws.onmessage = function (evt) {
+        var received_msg = evt.data;
+        location.reload(false);
+    };
+
+    ws.onclose = function() {
+    };
+
+    window.onbeforeunload = function(event) {
+    };
+} else {
+    // The browser doesn't support WebSocket
+    console.log("GitPitch Desktop auto-reload disabled [no websockets].");
+}
+</script>
+
+    
+    <link href="./decomposing-user-stories_files/pitchpost.css" rel="stylesheet" type="text/css"><script type="text/javascript" src="./decomposing-user-stories_files/marked.js"></script><script type="text/javascript" src="./decomposing-user-stories_files/markdown.js"></script>
+    
+<script type="text/javascript" src="./decomposing-user-stories_files/notes.js"></script><script type="text/javascript" src="./decomposing-user-stories_files/highlight.js"></script><script type="text/javascript" src="./decomposing-user-stories_files/reveal-code-focus-0619-mod.js"></script><script type="text/javascript" src="./decomposing-user-stories_files/twitter-embed-widgets.js"></script><style type="text/css">
+@font-face {
+  font-weight: 400;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Book-cd7d2bcec649b1243839a15d5eb8f0a3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 500;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Medium-d74eac43c78bd5852478998ce63dceb3.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Bold-83b8ceaf77f49c7cffa44107561909e4.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 900;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('https://cdn.loom.com/assets/fonts/circular/CircularXXWeb-Black-bf067ecb8aa777ceb6df7d72226febca.woff2') format('woff2');
+}</style></head>
+<body style="">
+    
+
+
+    <div class="reveal none center has-horizontal-slides ready" role="application" data-transition-speed="default" data-background-transition="none" style="">
+        <div class="slides" style="width: 960px; height: 700px; zoom: 1.19571;">
+            
+            <section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(180deg, black 50%, yellow 50%)" class="present" style="top: 330px; display: block;"><!-- -->
+<div class="north span-100 text-center">
+
+<br>
+<br>
+<h1><span style="color: yellow"><strong><em>{De}Composing</em></strong></span></h1>
+
+</div>
+
+<div class="south span-100 text-center fragment" data-fragment-index="0">
+
+<h1><span style="color: black"><strong><em>Stories</em></strong></span></h1>
+<br>
+<br>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 320px; display: block;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Actions</em></strong></span>
+
+</div>
+
+
+<div class="west span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">question</span></div><p id="boxed-text">What's an <strong><em>Action</em></strong>?</p></div>
+
+<p></p></div><p></p>
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 320px; display: block;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Actions</em></strong></span>
+
+</div>
+
+<div class="west span-35">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">question</span></div><p id="boxed-text">What's an <strong><em>Action</em></strong>?</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35">
+
+<div id="boxed-text-box" class="bg-yellow rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">answer</span></div><p id="boxed-text"><strong><em>Atomic Action</em></strong> <span style="color: red"><strong><em>or</em></strong></span> <strong><em>Flow of Actions</em></strong></p></div>
+
+<p></p></div><p></p>
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Atomic Actions</em></strong></span>
+
+</div>
+
+<div class="west span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">question</span></div><p id="boxed-text">What's an <strong><em>Atomic Action</em></strong>?</p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Atomic Actions</em></strong></span>
+
+</div>
+
+<div class="west span-35">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">question</span></div><p id="boxed-text">What's an <strong><em>Atomic Action</em></strong>?</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35">
+
+<div id="boxed-text-box" class="bg-yellow rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">answer</span></div><p id="boxed-text">A purposeful <span style="color: red"><strong><em>interaction</em></strong></span> between <span style="color: red"><strong><em>agents</em></strong></span> affecting a <span style="color: red"><strong><em>resource</em></strong></span></p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Atomic Actions</em></strong></span>
+
+</div>
+
+<div class="west span-35">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">question</span></div><p id="boxed-text">What's an <strong><em>Atomic Action</em></strong>?</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-yellow rounded boxed-text-left"><div id="boxed-text-title-box"><span id="boxed-text-title">example: atomic action</span></div><p id="boxed-text"><span style="color: red"><strong><em>Vishita</em></strong></span> inserts her <span style="color: red"><strong><em>bank card</em></strong></span> into the <span style="color: red"><strong><em>ATM</em></strong></span>.</p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Flow of Actions</em></strong></span>
+
+</div>
+
+<div class="west span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">question</span></div><p id="boxed-text">What's a <strong><em>Flow of Actions</em></strong>?</p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Flow of Actions</em></strong></span>
+
+</div>
+
+<div class="west span-35">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">question</span></div><p id="boxed-text">What's a <strong><em>Flow of Actions</em></strong>?</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35">
+
+<div id="boxed-text-box" class="bg-yellow rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">answer</span></div><p id="boxed-text">Composed of <span style="color: red"><strong><em>several</em></strong></span> Actions</p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Flow of Actions</em></strong></span>
+
+</div>
+
+<div class="west span-35">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">question</span></div><p id="boxed-text">What's a <strong><em>Flow of Actions</em></strong>?</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35">
+
+<div id="boxed-text-box" class="bg-yellow rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">answer</span></div><p id="boxed-text"><strong><em>Sequence</em></strong>, <br> <strong><em>Concurrency</em></strong>, <br> <strong><em>Alternative</em></strong>, <br> or <br> <strong><em>Repetition</em></strong></p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Sequence</em></strong></span>
+
+</div>
+
+<div class="west span-35">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">question</span></div><p id="boxed-text">What's <strong><em>Sequence</em></strong>?</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-yellow rounded boxed-text-left"><div id="boxed-text-title-box"><span id="boxed-text-title">example: sequence</span></div><p id="boxed-text">Braulio gets a card,<br><br><span style="color: red"><strong><em>then</em></strong></span>,<br><br>Braulio withdraws cash from the ATM.</p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Concurrency</em></strong></span>
+
+</div>
+
+<div class="west span-35">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">question</span></div><p id="boxed-text">What's <strong><em>Concurrency</em></strong>?</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-yellow rounded boxed-text-left"><div id="boxed-text-title-box"><span id="boxed-text-title">example: concurrency</span></div><p id="boxed-text">The ATM keeps the card,<br><br><span style="color: red"><strong><em>meanwhile</em></strong></span>,<br><br>the ATM displays "invalid code" to the Vinesh.</p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt; Sequence</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Flow Condition</em></strong></span>
+
+</div>
+
+<div class="west span-35">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">question</span></div><p id="boxed-text">What's a <strong><em>Flow Condition</em></strong>?</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-yellow rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">answer</span></div><p id="boxed-text">Carried by <strong><em>Alternative</em></strong> and <strong><em>Repetition</em></strong></p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt; Sequence —&gt; Concurrency</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Alternative</em></strong></span>
+
+</div>
+
+<div class="west span-35">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">question</span></div><p id="boxed-text">What's <strong><em>Alternative</em></strong>?</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-yellow rounded boxed-text-left"><div id="boxed-text-title-box"><span id="boxed-text-title">example: alternative</span></div><p id="boxed-text"><span style="color: red">If</span> the amount is valid,<br><br><span style="color: red"><strong><em>then</em></strong></span><br><br>the ATM ejects the card to Vinesh.</p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt;<br>Atomic Actions —&gt; Flow of Actions —&gt; Sequence —&gt; Concurrency -&gt; Flow Condition</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Repetition</em></strong></span>
+
+</div>
+
+<div class="west span-35">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">question</span></div><p id="boxed-text">What's <strong><em>Repetition</em></strong>?</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-yellow rounded boxed-text-left"><div id="boxed-text-title-box"><span id="boxed-text-title">example: repetition</span></div><p id="boxed-text"><span style="color: red"><strong><em>Repeat</em></strong></span><br><br>A prompt for the amount is displayed.<br><br>Yuvaraj enters an amount.<br><br>The ATM checks if the amount is valid.<br><br><span style="color: red"><strong><em>3 times until</em></strong></span><br><br>the amount is valid.</p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions —&gt;<br>Flow of Actions —&gt; Sequence —&gt; Concurrency -&gt; Flow Condition -&gt; Alternative</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Stories</em></strong></span>
+
+</div>
+
+<div class="west span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">question</span></div><p id="boxed-text">What's a <strong><em>Story</em></strong>?</p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;<br>Sequence —&gt; Concurrency -&gt; Flow Condition -&gt; Alternative -&gt; Repetition</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Stories</em></strong></span>
+
+</div>
+
+<div class="west span-35">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">question</span></div><p id="boxed-text">What's a <strong><em>Story</em></strong>?</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35">
+
+<div id="boxed-text-box" class="bg-yellow rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">answer</span></div><p id="boxed-text">a possible behavior limited to a set of purposeful interactions between several agents</p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;<br>Sequence —&gt; Concurrency -&gt; Flow Condition -&gt; Alternative -&gt; Repetition</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(90deg, yellow 0%, orange 99%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Stories</em></strong></span>
+
+</div>
+
+<div class="north span-100">
+
+<br>
+<span style="font-size: 1em"><strong><em>Example</em></strong></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre><code class="hljs lang-Excel zoom-06"><span class="line"><span class="line-number"></span>Initial State <span class="hljs-symbol">:</span> The ATM is ready. The user has a card.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>The user inserts his card in the ATM.</span><span class="line"><span class="line-number"></span>The ATM checks <span class="hljs-built_in">if</span> the card is valid.</span><span class="line"><span class="line-number"></span>  <span class="hljs-built_in">If</span> the card is valid</span><span class="line"><span class="line-number"></span>    Then</span><span class="line"><span class="line-number"></span>    A prompt for <span class="hljs-built_in">code</span> is given.</span><span class="line"><span class="line-number"></span>    The user inputs the code.</span><span class="line"><span class="line-number"></span>    <span class="hljs-built_in">If</span> the <span class="hljs-built_in">code</span> is valid</span><span class="line"><span class="line-number"></span>      Then</span><span class="line"><span class="line-number"></span>      A prompt for amount is displayed.</span><span class="line"><span class="line-number"></span>      The user enters an amount.</span><span class="line"><span class="line-number"></span>      <span class="hljs-built_in">If</span> the amount is valid</span><span class="line"><span class="line-number"></span>        Then</span><span class="line"><span class="line-number"></span>        The ATM ejects the card.</span><span class="line"><span class="line-number"></span>        <span class="hljs-built_in">If</span> asked</span><span class="line"><span class="line-number"></span>          Then</span><span class="line"><span class="line-number"></span>          A receipt is printed.</span><span class="line"><span class="line-number"></span>          The ATM delivers the cash.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>Final State <span class="hljs-symbol">:</span> The ATM is ready. The user has cash. The user has a card. The user has a receipt.</span></code></pre>
+
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: black"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;<br>Sequence —&gt; Concurrency -&gt; Flow Condition -&gt; Alternative -&gt; Repetition</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(180deg, black 50%, yellow 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north span-100 text-center">
+
+<br>
+<br>
+<h1><span style="color: yellow"><strong><em>Story</em></strong></span></h1>
+
+</div>
+
+<div class="south span-100 text-center fragment" data-fragment-index="0">
+
+<h1><span style="color: black"><strong><em>Composition</em></strong></span></h1>
+<br>
+<br>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Story Composition</em></strong></span>
+
+</div>
+
+<div class="west span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">guidelines</span></div><p id="boxed-text">Style and Content</p></div>
+
+<p></p></div><p></p>
+<div class="east span-40 zoom-07">
+
+
+
+
+
+
+
+– <strong>Avoid passive voice.</strong>
+– <strong>Write in the present tense.</strong>
+<ul class="text-yellow custom-boxed-orange">
+<li class="fragment" data-fragment-index="1"><strong>Avoid anaphoric references.</strong></li>
+<li class="fragment" data-fragment-index="2"><strong>Avoid use of synonyms and homonyms.</strong></li>
+<li class="fragment" data-fragment-index="3"><strong>Avoid sentences of more than 1 clause.</strong></li>
+<li class="fragment" data-fragment-index="4"><strong>State assumptions explicitly.</strong></li>
+<li class="fragment" data-fragment-index="5"><strong>State co-occurrence explicitly.</strong></li>
+</ul>
+
+
+</div>
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;Sequence —&gt;<br>Concurrency -&gt; Flow Condition -&gt; Alternative -&gt; Repetition</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Story Composition</em></strong></span>
+
+</div>
+
+<div class="west span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">guidelines</span></div><p id="boxed-text">Completion</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35 fragment" data-fragment-index="1">
+
+<div id="boxed-text-box" class="bg-yellow rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">analyze interactions</span></div><p id="boxed-text"><strong><em>complete all agent-to-agent interactions</em></strong></p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;Sequence —&gt;<br>Concurrency -&gt; Flow Condition -&gt; Alternative -&gt; Repetition</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(90deg, yellow 0%, orange 99%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Story Composition</em></strong></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre><code class="hljs lang-Excel zoom-06 span-150"><span class="line"><span class="line-number"></span>Initial State <span class="hljs-symbol">:</span> The ATM is ready. The user has a card.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>The user inserts his card in the ATM.</span><span class="line"><span class="line-number"></span>The ATM checks <span class="hljs-built_in">if</span> the card is valid.</span><span class="line"><span class="line-number"></span>  <span class="hljs-built_in">If</span> the card is valid</span><span class="line"><span class="line-number"></span>    Then</span><span class="line"><span class="line-number"></span>    A prompt for <span class="hljs-built_in">code</span> is given.</span><span class="line"><span class="line-number"></span>    The user inputs the code.</span><span class="line"><span class="line-number"></span>    <span class="hljs-built_in">If</span> the <span class="hljs-built_in">code</span> is valid</span><span class="line"><span class="line-number"></span>      Then</span><span class="line"><span class="line-number"></span>      A prompt for amount is displayed.</span><span class="line"><span class="line-number"></span>      The user enters an amount.</span><span class="line"><span class="line-number"></span>      <span class="hljs-built_in">If</span> the amount is valid</span><span class="line"><span class="line-number"></span>        Then</span><span class="line"><span class="line-number"></span>        The ATM ejects the card.</span><span class="line"><span class="line-number"></span>        <span class="hljs-built_in">If</span> asked</span><span class="line"><span class="line-number"></span>          Then</span><span class="line"><span class="line-number"></span>          A receipt is printed.</span><span class="line"><span class="line-number"></span>          The ATM delivers the cash.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>Final State <span class="hljs-symbol">:</span> The ATM is ready. The user has cash. The user has a card. The user has a receipt.</span></code></pre>
+
+
+<div class="north span-100 text-10 code-reveal-fast">
+
+<br>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="0, zoom-16" data-fragment-index="0"><strong><em>(Discover Missing Interactions)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="3, zoom-16" data-fragment-index="1"><strong><em>(Discover Missing Interactions)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="7, zoom-16" data-fragment-index="2"><strong><em>(Discover Missing Interactions)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="8, zoom-16" data-fragment-index="3"><strong><em>(Discover Missing Interactions)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="11, zoom-16" data-fragment-index="4"><strong><em>(Discover Missing Interactions)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="12, zoom-16" data-fragment-index="5"><strong><em>(Discover Missing Interactions)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="15, zoom-16" data-fragment-index="6"><strong><em>(Discover Missing Interactions)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="16, zoom-16" data-fragment-index="7"><strong><em>(Discover Missing Interactions)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="18, zoom-16" data-fragment-index="8"><strong><em>(Discover Missing Interactions)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="19, zoom-16" data-fragment-index="9"><strong><em>(Discover Missing Interactions)</em></strong></span>
+
+</div>
+
+<div class="south-west span-100 zoom-08">
+
+<span style="color: black"><strong><em>incomplete</em></strong></span>
+<br>
+<br>
+
+</div>
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: black"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;Sequence —&gt;<br>Concurrency -&gt; Flow Condition -&gt; Alternative -&gt; Repetition</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(90deg, yellow 0%, orange 99%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Missing Interactions</em></strong></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre><code class="hljs lang-Excel zoom-06 span-150"><span class="line"><span class="line-number"></span>Initial State <span class="hljs-symbol">:</span> The ATM is ready. The user has a card</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>The user inserts the user's card in the ATM.</span><span class="line"><span class="line-number"></span>The ATM checks <span class="hljs-built_in">if</span> the card is valid.</span><span class="line"><span class="line-number"></span>  <span class="hljs-built_in">If</span> the card is valid</span><span class="line"><span class="line-number"></span>    Then</span><span class="line"><span class="line-number"></span>    A prompt for <span class="hljs-built_in">code</span> is given by the ATM to the user.</span><span class="line"><span class="line-number"></span>    The user inputs the <span class="hljs-built_in">code</span> in the ATM.</span><span class="line"><span class="line-number"></span>    <span class="hljs-built_in">If</span> the <span class="hljs-built_in">code</span> is valid</span><span class="line"><span class="line-number"></span>      Then</span><span class="line"><span class="line-number"></span>      A prompt for amount is displayed by the ATM to the user.</span><span class="line"><span class="line-number"></span>      The user enters an amount in the ATM.</span><span class="line"><span class="line-number"></span>      <span class="hljs-built_in">If</span> the amount is valid</span><span class="line"><span class="line-number"></span>        Then</span><span class="line"><span class="line-number"></span>        The ATM ejects the card to the user.</span><span class="line"><span class="line-number"></span>        <span class="hljs-built_in">If</span> the user asked the ATM to supply a receipt</span><span class="line"><span class="line-number"></span>          Then</span><span class="line"><span class="line-number"></span>          A receipt is printed to the user.</span><span class="line"><span class="line-number"></span>          The ATM delivers the cash to the user.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>Final State <span class="hljs-symbol">:</span> The ATM is ready. The user has cash. The user has a card. The user has a receipt.</span></code></pre>
+
+
+<div class="north span-100 text-10 code-reveal-fast">
+
+<br>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="0, zoom-16" data-fragment-index="0"><strong><em>(resolve interactions to atomic actions)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="3, zoom-16" data-fragment-index="1"><strong><em>The user inserts his card in the ATM.</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="7, zoom-16" data-fragment-index="2"><strong><em>A prompt for code is given.</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="8, zoom-16" data-fragment-index="3"><strong><em>The user inputs the code.</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="11, zoom-16" data-fragment-index="4"><strong><em>A prompt for amount is displayed.</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="12, zoom-16" data-fragment-index="5"><strong><em>The user enters an amount.</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="15, zoom-16" data-fragment-index="6"><strong><em>The ATM ejects the card.</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="16, zoom-16" data-fragment-index="7"><strong><em>If asked...</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="18, zoom-16" data-fragment-index="8"><strong><em>A receipt is printed.</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="19, zoom-16" data-fragment-index="9"><strong><em>The ATM delivers the cash.</em></strong></span>
+
+</div>
+
+<div class="south-west span-100 zoom-08">
+
+<span style="color: black"><strong><em>completed</em></strong></span>
+<br>
+<br>
+
+</div>
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: black"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;Sequence —&gt;<br>Concurrency -&gt; Flow Condition -&gt; Alternative -&gt; Repetition</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(180deg, black 50%, yellow 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north span-100 text-center">
+
+<br>
+<br>
+<h1><span style="color: yellow"><strong><em>Story</em></strong></span></h1>
+
+</div>
+
+<div class="south span-100 text-center fragment" data-fragment-index="0">
+
+<h1><span style="color: black"><strong><em>Decomposition</em></strong></span></h1>
+<br>
+<br>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Story Decomposition</em></strong></span>
+
+</div>
+
+<div class="west span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">rule 1</span></div><p id="boxed-text">Discover Missing Action Pairs</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35 fragment" data-fragment-index="1">
+
+<div id="boxed-text-box" class="bg-yellow rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">analyze</span></div><p id="boxed-text"><strong><em>service request / provision</em></strong>, <br> <strong><em>info request / provision</em></strong>, <br> and <br> <strong><em>flow condition / evaluation</em></strong></p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;<br>Sequence —&gt; Concurrency -&gt; Flow Condition -&gt;<br>Alternative -&gt; Repetition -&gt; Story -&gt; Missing Interactions</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(90deg, yellow 0%, orange 99%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Story Decomposition</em></strong></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre><code class="hljs lang-Excel zoom-06 span-150"><span class="line"><span class="line-number"></span>Initial State <span class="hljs-symbol">:</span> The ATM is ready. The user has a card</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>The user inserts the user's card in the ATM.</span><span class="line"><span class="line-number"></span>The ATM checks <span class="hljs-built_in">if</span> the card is valid.</span><span class="line"><span class="line-number"></span>  <span class="hljs-built_in">If</span> the card is valid</span><span class="line"><span class="line-number"></span>    Then</span><span class="line"><span class="line-number"></span>    A prompt for <span class="hljs-built_in">code</span> is given by the ATM to the user.</span><span class="line"><span class="line-number"></span>    The user inputs the <span class="hljs-built_in">code</span> in the ATM.</span><span class="line"><span class="line-number"></span>    <span class="hljs-built_in">If</span> the <span class="hljs-built_in">code</span> is valid</span><span class="line"><span class="line-number"></span>      Then</span><span class="line"><span class="line-number"></span>      A prompt for amount is displayed by the ATM to the user.</span><span class="line"><span class="line-number"></span>      The user enters an amount in the ATM.</span><span class="line"><span class="line-number"></span>      <span class="hljs-built_in">If</span> the amount is valid</span><span class="line"><span class="line-number"></span>        Then</span><span class="line"><span class="line-number"></span>        The ATM ejects the card to the user.</span><span class="line"><span class="line-number"></span>        <span class="hljs-built_in">If</span> the user asked the ATM to supply a receipt</span><span class="line"><span class="line-number"></span>          Then</span><span class="line"><span class="line-number"></span>          A receipt is printed to the user.</span><span class="line"><span class="line-number"></span>          The ATM delivers the cash to the user.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>Final State <span class="hljs-symbol">:</span> The ATM is ready. The user has cash. The user has a card. The user has a receipt.</span></code></pre>
+
+
+<div class="north span-100 text-08 code-reveal-fast">
+
+<br>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="0, zoom-16" data-fragment-index="0"><strong><em>(Discover Missing Action Pairs)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="8-10, zoom-16" data-fragment-index="1"><strong><em>(Missing Flow Evaluation)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="12-14, zoom-16" data-fragment-index="2"><strong><em>(Missing Flow Evaluation)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="16, zoom-16" data-fragment-index="3"><strong><em>(Missing Information Request)</em></strong></span>
+
+</div>
+
+<div class="south-west span-100 zoom-08">
+
+<span style="color: black"><strong><em>incomplete</em></strong></span>
+<br>
+<br>
+
+</div>
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: black"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;<br>Sequence —&gt; Concurrency -&gt; Flow Condition -&gt;<br>Alternative -&gt; Repetition -&gt; Story -&gt; Missing Interactions</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(90deg, yellow 0%, orange 99%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Missing Action Pairs</em></strong></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre><code class="hljs lang-Excel zoom-06 span-150"><span class="line"><span class="line-number"></span>Initial State <span class="hljs-symbol">:</span> The ATM is ready. The user has a card</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>The user inserts the user's card in the ATM.</span><span class="line"><span class="line-number"></span>The ATM checks <span class="hljs-built_in">if</span> the card is valid.</span><span class="line"><span class="line-number"></span><span class="hljs-built_in">If</span> the card is valid</span><span class="line"><span class="line-number"></span>  Then</span><span class="line"><span class="line-number"></span>  A prompt for <span class="hljs-built_in">code</span> is given by the ATM to the user.</span><span class="line"><span class="line-number"></span>  The user inputs the <span class="hljs-built_in">code</span> in the ATM.</span><span class="line"><span class="line-number"></span>  The ATM checks <span class="hljs-built_in">if</span> the <span class="hljs-built_in">code</span> is valid.</span><span class="line"><span class="line-number"></span>  <span class="hljs-built_in">If</span> the <span class="hljs-built_in">code</span> is valid</span><span class="line"><span class="line-number"></span>    Then</span><span class="line"><span class="line-number"></span>    A prompt for amount is displayed by the ATM to the user.</span><span class="line"><span class="line-number"></span>    The user enters an amount in the ATM.</span><span class="line"><span class="line-number"></span>    The ATM checks <span class="hljs-built_in">if</span> the amount is valid.</span><span class="line"><span class="line-number"></span>    <span class="hljs-built_in">If</span> the amount is valid</span><span class="line"><span class="line-number"></span>      Then</span><span class="line"><span class="line-number"></span>      The ATM ejects the card to the user.</span><span class="line"><span class="line-number"></span>      The ATM prompts the user <span class="hljs-symbol">:</span> receipt?</span><span class="line"><span class="line-number"></span>      The users chooses <span class="hljs-string">"YES"</span> <span class="hljs-built_in">or</span> <span class="hljs-string">"NO."</span></span><span class="line"><span class="line-number"></span>      <span class="hljs-built_in">If</span> the user asked the ATM to supply a receipt</span><span class="line"><span class="line-number"></span>        Then</span><span class="line"><span class="line-number"></span>        A receipt is printed to the user.</span><span class="line"><span class="line-number"></span>        The ATM delivers the cash to the user.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>Final State <span class="hljs-symbol">:</span> The ATM is ready. The user has cash. The user has a card. The user has a receipt.</span></code></pre>
+
+<div class="north span-100 text-08 code-reveal-fast">
+
+<br>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="0, zoom-16" data-fragment-index="0"><strong><em>(service request/information request/flow condition)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="8-10, zoom-16" data-fragment-index="1"><strong><em>The user inputs the code in the ATM. / If the code is valid...</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="13-15, zoom-16" data-fragment-index="2"><strong><em>The user enters an amount in the ATM. / If the amount is valid...</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="18-20, zoom-16" data-fragment-index="3"><strong><em>If the user asked the ATM to supply a receipt...</em></strong></span>
+
+</div>
+
+<div class="south-west span-100 zoom-08">
+
+<span style="color: black"><strong><em>completed</em></strong></span>
+<br>
+<br>
+
+</div>
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: black"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;<br>Sequence —&gt; Concurrency -&gt; Flow Condition -&gt;<br>Alternative -&gt; Repetition -&gt; Story -&gt; Missing Interactions</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Story Decomposition</em></strong></span>
+
+</div>
+
+<div class="west span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">rule 2</span></div><p id="boxed-text">Discover Missing Paths</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35 fragment" data-fragment-index="1">
+
+<div id="boxed-text-box" class="bg-yellow rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">analyze</span></div><p id="boxed-text"><strong><em>complete all paths of actions</em></strong></p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;<br>Sequence —&gt; Concurrency -&gt; Flow Condition -&gt; Alternative -&gt;<br>Repetition -&gt; Story -&gt; Missing Interactions -&gt; Missing Action Pairs</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(90deg, yellow 0%, orange 99%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Story Decomposition</em></strong></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre><code class="hljs lang-Excel zoom-06 span-150"><span class="line"><span class="line-number"></span>Initial State <span class="hljs-symbol">:</span> The ATM is ready. The user has a card</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>The user inserts the user's card in the ATM.</span><span class="line"><span class="line-number"></span>The ATM checks <span class="hljs-built_in">if</span> the card is valid.</span><span class="line"><span class="line-number"></span><span class="hljs-built_in">If</span> the card is valid</span><span class="line"><span class="line-number"></span>  Then</span><span class="line"><span class="line-number"></span>  A prompt for <span class="hljs-built_in">code</span> is given by the ATM to the user.</span><span class="line"><span class="line-number"></span>  The user inputs the <span class="hljs-built_in">code</span> in the ATM.</span><span class="line"><span class="line-number"></span>  The ATM checks <span class="hljs-built_in">if</span> the <span class="hljs-built_in">code</span> is valid.</span><span class="line"><span class="line-number"></span>  <span class="hljs-built_in">If</span> the <span class="hljs-built_in">code</span> is valid</span><span class="line"><span class="line-number"></span>    Then</span><span class="line"><span class="line-number"></span>    A prompt for amount is displayed by the ATM to the user.</span><span class="line"><span class="line-number"></span>    The user enters an amount in the ATM.</span><span class="line"><span class="line-number"></span>    The ATM checks <span class="hljs-built_in">if</span> the amount is valid.</span><span class="line"><span class="line-number"></span>    <span class="hljs-built_in">If</span> the amount is valid</span><span class="line"><span class="line-number"></span>      Then</span><span class="line"><span class="line-number"></span>      The ATM ejects the card to the user.</span><span class="line"><span class="line-number"></span>      The ATM prompts the user <span class="hljs-symbol">:</span> receipt?</span><span class="line"><span class="line-number"></span>      The users chooses <span class="hljs-string">"YES"</span> <span class="hljs-built_in">or</span> <span class="hljs-string">"NO."</span></span><span class="line"><span class="line-number"></span>      <span class="hljs-built_in">If</span> the user asked the ATM to supply a receipt</span><span class="line"><span class="line-number"></span>        Then</span><span class="line"><span class="line-number"></span>        A receipt is printed to the user.</span><span class="line"><span class="line-number"></span>        The ATM delivers the cash to the user.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>Final State <span class="hljs-symbol">:</span> The ATM is ready. The user has cash. The user has a card. The user has a receipt.</span></code></pre>
+
+
+<div class="north span-100 text-08 code-reveal-fast">
+
+<br>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="0, zoom-16" data-fragment-index="0"><strong><em>(Discover Missing Paths)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="5, zoom-16" data-fragment-index="1"><strong><em>(Discover Missing Paths)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="10, zoom-16" data-fragment-index="2"><strong><em>(Discover Missing Paths)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="15, zoom-16" data-fragment-index="3"><strong><em>(Discover Missing Paths)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="20, zoom-16" data-fragment-index="4"><strong><em>(Discover Missing Paths)</em></strong></span>
+
+</div>
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: black"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;<br>Sequence —&gt; Concurrency -&gt; Flow Condition -&gt; Alternative -&gt;<br>Repetition -&gt; Story -&gt; Missing Interactions -&gt; Missing Action Pairs</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(90deg, yellow 0%, orange 99%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Missing Paths</em></strong></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre><code class="hljs lang-Excel zoom-10 span-150"><span class="line"><span class="line-number"></span>card ~valid</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>card valid &amp; <span class="hljs-built_in">code</span> ~valid</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>card valid &amp; <span class="hljs-built_in">code</span> valid &amp; amount ~valid</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>card valid &amp; <span class="hljs-built_in">code</span> valid &amp; amount valid &amp; receipt ~requested</span></code></pre>
+
+
+<div class="north span-100 text-08 code-reveal-fast">
+
+<br>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="0, zoom-10" data-fragment-index="0"><strong><em>(reasoning on flow of actions)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="1, zoom-10" data-fragment-index="1"><strong><em>Exceptional</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="5, zoom-10" data-fragment-index="2"><strong><em>Exceptional</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="9, zoom-10" data-fragment-index="3"><strong><em>Exceptional</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="13, zoom-10" data-fragment-index="4"><strong><em>Normal</em></strong></span>
+
+</div>
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: black"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;<br>Sequence —&gt; Concurrency -&gt; Flow Condition -&gt; Alternative -&gt;<br>Repetition -&gt; Story -&gt; Missing Interactions -&gt; Missing Action Pairs</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(90deg, yellow 0%, orange 99%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Missing Paths</em></strong></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre><code class="hljs lang-Excel zoom-10 span-150"><span class="line"><span class="line-number"></span>Initial State <span class="hljs-symbol">:</span> The ATM is ready. The user has a card.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>The user inserts the user's card in the ATM.</span><span class="line"><span class="line-number"></span>The ATM checks <span class="hljs-built_in">if</span> the card is valid.</span><span class="line"><span class="line-number"></span><span class="hljs-built_in">If</span> the card is <span class="hljs-built_in">not</span> valid</span><span class="line"><span class="line-number"></span>  Then</span><span class="line"><span class="line-number"></span>  The ATM displays <span class="hljs-string">"invalid card"</span> to the user.</span><span class="line"><span class="line-number"></span>  The ATM ejects the card to the user.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>Final State <span class="hljs-symbol">:</span> The ATM is ready. The user has a card.</span></code></pre>
+
+
+<div class="north span-100 text-08 code-reveal-fast">
+
+<br>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="0, zoom-13" data-fragment-index="0"><strong><em>("card not valid")</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="1, zoom-11" data-fragment-index="1"><strong><em>(intitial state)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="7-10, zoom-11" data-fragment-index="2"><strong><em>(Discovered  Path)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="14, zoom-11" data-fragment-index="3"><strong><em>(final state)</em></strong></span>
+
+</div>
+
+<div class="south-west span-100 zoom-08">
+
+<span style="color: black"><strong><em>exceptional story</em></strong></span>
+<br>
+<br>
+
+</div>
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: black"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;<br>Sequence —&gt; Concurrency -&gt; Flow Condition -&gt; Alternative -&gt;<br>Repetition -&gt; Story -&gt; Missing Interactions -&gt; Missing Action Pairs</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(90deg, yellow 0%, orange 99%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Missing Paths</em></strong></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre><code class="hljs lang-Excel zoom-10 span-150"><span class="line"><span class="line-number"></span>Initial State <span class="hljs-symbol">:</span> The ATM is ready. The user has a card</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>The user inserts the user's card in the ATM.</span><span class="line"><span class="line-number"></span>The ATM checks <span class="hljs-built_in">if</span> the card is valid.</span><span class="line"><span class="line-number"></span><span class="hljs-built_in">If</span> the card is valid</span><span class="line"><span class="line-number"></span>  Then</span><span class="line"><span class="line-number"></span>  Repeat</span><span class="line"><span class="line-number"></span>    A prompt for <span class="hljs-built_in">code</span> is given by the ATM to the user.</span><span class="line"><span class="line-number"></span>    The user inputs the <span class="hljs-built_in">code</span> in the ATM.</span><span class="line"><span class="line-number"></span>    The ATM checks <span class="hljs-built_in">if</span> the <span class="hljs-built_in">code</span> is valid.</span><span class="line"><span class="line-number"></span>  <span class="hljs-number">3</span> times until the <span class="hljs-built_in">code</span> is valid</span><span class="line"><span class="line-number"></span>  <span class="hljs-built_in">If</span> the <span class="hljs-built_in">code</span> is <span class="hljs-built_in">not</span> valid</span><span class="line"><span class="line-number"></span>    Then</span><span class="line"><span class="line-number"></span>    The ATM displays <span class="hljs-string">"invalid card"</span> to the user.</span><span class="line"><span class="line-number"></span>    The ATM keeps the card.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>Final State <span class="hljs-symbol">:</span> The ATM is ready. The ATM has the card.</span></code></pre>
+
+
+<div class="north span-100 text-08 code-reveal-fast">
+
+<br>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="0, zoom-13" data-fragment-index="0"><strong><em>("card valid &amp; code not valid")</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="1, zoom-11" data-fragment-index="1"><strong><em>(intitial state)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="7-11, zoom-11" data-fragment-index="2"><strong><em>(Discovered Path)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="12-15, zoom-11" data-fragment-index="3"><strong><em>(Discovered Path)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="17, zoom-11" data-fragment-index="4"><strong><em>(final state)</em></strong></span>
+
+</div>
+
+<div class="south-west span-100 zoom-08">
+
+<span style="color: black"><strong><em>exceptional story</em></strong></span>
+<br>
+<br>
+
+</div>
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: black"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;<br>Sequence —&gt; Concurrency -&gt; Flow Condition -&gt; Alternative -&gt;<br>Repetition -&gt; Story -&gt; Missing Interactions -&gt; Missing Action Pairs</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(90deg, yellow 0%, orange 99%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Missing Paths</em></strong></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre><code class="hljs lang-Excel zoom-06 span-150"><span class="line"><span class="line-number"></span>Initial State <span class="hljs-symbol">:</span> The ATM is ready. The user has a card.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>The user inserts the user's card in the ATM.</span><span class="line"><span class="line-number"></span>The ATM checks <span class="hljs-built_in">if</span> the card is valid.</span><span class="line"><span class="line-number"></span><span class="hljs-built_in">If</span> the card is valid</span><span class="line"><span class="line-number"></span>  Then</span><span class="line"><span class="line-number"></span>  Repeat</span><span class="line"><span class="line-number"></span>    A prompt for <span class="hljs-built_in">code</span> is given by the ATM to the user.</span><span class="line"><span class="line-number"></span>    The user inputs the <span class="hljs-built_in">code</span> in the ATM.</span><span class="line"><span class="line-number"></span>    The ATM checks <span class="hljs-built_in">if</span> the <span class="hljs-built_in">code</span> is valid.</span><span class="line"><span class="line-number"></span>  <span class="hljs-number">3</span> times until the <span class="hljs-built_in">code</span> is valid</span><span class="line"><span class="line-number"></span>  <span class="hljs-built_in">If</span> the <span class="hljs-built_in">code</span> is valid</span><span class="line"><span class="line-number"></span>    Then</span><span class="line"><span class="line-number"></span>    A prompt for amount is displayed by the ATM to the user.</span><span class="line"><span class="line-number"></span>    The user enters an amount in the ATM.</span><span class="line"><span class="line-number"></span>    The ATM checks <span class="hljs-built_in">if</span> the amount is valid.</span><span class="line"><span class="line-number"></span>    <span class="hljs-built_in">If</span> the amount is valid</span><span class="line"><span class="line-number"></span>      Then</span><span class="line"><span class="line-number"></span>      The ATM ejects the card to the user.</span><span class="line"><span class="line-number"></span>      The ATM prompts the user <span class="hljs-symbol">:</span> receipt?</span><span class="line"><span class="line-number"></span>      The users chooses <span class="hljs-string">"YES"</span> <span class="hljs-built_in">or</span> <span class="hljs-string">"NO."</span></span><span class="line"><span class="line-number"></span>      <span class="hljs-built_in">If</span> the user chose <span class="hljs-string">"NO"</span></span><span class="line"><span class="line-number"></span>        Then</span><span class="line"><span class="line-number"></span>        The ATM delivers the cash to the user.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>Final State <span class="hljs-symbol">:</span> The ATM is ready. The user has cash. The user has a card.</span></code></pre>
+
+
+<div class="north span-100 text-08 code-reveal-fast">
+
+<br>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="0, zoom-16" data-fragment-index="0"><strong><em>("card valid &amp; code valid &amp; amount valid &amp; receipt not asked")</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="1, zoom-18" data-fragment-index="1"><strong><em>(intitial state)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="20-24, zoom-20" data-fragment-index="2"><strong><em>(Discovered Path)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="26, zoom-14" data-fragment-index="3"><strong><em>(final state)</em></strong></span>
+
+</div>
+
+<div class="south-west span-100 zoom-08">
+
+<span style="color: black"><strong><em>normal story</em></strong></span>
+<br>
+<br>
+
+</div>
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: black"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;<br>Sequence —&gt; Concurrency -&gt; Flow Condition -&gt; Alternative -&gt;<br>Repetition -&gt; Story -&gt; Missing Interactions -&gt; Missing Action Pairs</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Story Decomposition</em></strong></span>
+
+</div>
+
+<div class="west span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">rule 3</span></div><p id="boxed-text">Discover Missing States</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35 fragment" data-fragment-index="1">
+
+<div id="boxed-text-box" class="bg-yellow rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">analyze</span></div><p id="boxed-text"><strong><em>complete all initial / final states</em></strong></p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt; Sequence —&gt;<br>Concurrency -&gt; Flow Condition -&gt; Alternative -&gt; Repetition -&gt;<br>Story -&gt; Missing Interactions -&gt; Missing Action Pairs -&gt; Missing Paths</em></strong></span>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(90deg, yellow 0%, orange 99%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Story Decomposition</em></strong></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre><code class="hljs lang-Excel zoom-07 span-150"><span class="line"><span class="line-number"></span>Initial State <span class="hljs-symbol">:</span> The ATM is ready. The user has a card.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>The user inserts the user's card in the ATM.</span><span class="line"><span class="line-number"></span>The ATM checks <span class="hljs-built_in">if</span> the card is valid.</span><span class="line"><span class="line-number"></span><span class="hljs-built_in">If</span> the card is valid</span><span class="line"><span class="line-number"></span>  Then</span><span class="line"><span class="line-number"></span>  Repeat</span><span class="line"><span class="line-number"></span>    A prompt for <span class="hljs-built_in">code</span> is given by the ATM to the user.</span><span class="line"><span class="line-number"></span>    The user inputs the <span class="hljs-built_in">code</span> in the ATM.</span><span class="line"><span class="line-number"></span>    The ATM checks <span class="hljs-built_in">if</span> the <span class="hljs-built_in">code</span> is valid.</span><span class="line"><span class="line-number"></span>  <span class="hljs-number">3</span> times until the <span class="hljs-built_in">code</span> is valid</span><span class="line"><span class="line-number"></span>  <span class="hljs-built_in">If</span> the <span class="hljs-built_in">code</span> is <span class="hljs-built_in">not</span> valid</span><span class="line"><span class="line-number"></span>    Then</span><span class="line"><span class="line-number"></span>    The ATM displays <span class="hljs-string">"invalid card"</span> to the user.</span><span class="line"><span class="line-number"></span>    The ATM keeps the card.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>Final State <span class="hljs-symbol">:</span> The ATM is ready. The ATM has the card.</span></code></pre>
+
+
+<div class="north span-100 text-08 code-reveal-fast">
+
+<br>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="0, zoom-16" data-fragment-index="0"><strong><em>(Discover Missing States)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="1, zoom-15" data-fragment-index="1"><strong><em>(initial state)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="17, zoom-15" data-fragment-index="2"><strong><em>(final state)</em></strong></span>
+
+</div>
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: black"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt; Sequence —&gt;<br>Concurrency -&gt; Flow Condition -&gt; Alternative -&gt; Repetition -&gt;<br>Story -&gt; Missing Interactions -&gt; Missing Action Pairs -&gt; Missing Paths</em></strong></span>
+
+</div>
+
+<div class="south-west span-100 zoom-08">
+
+<span style="color: black"><strong><em>exceptional story</em></strong></span>
+<br>
+<br>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(90deg, yellow 0%, orange 99%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Missing States</em></strong></span>
+
+</div>
+
+
+
+
+
+
+
+
+<pre><code class="hljs lang-Excel zoom-10 span-150"><span class="line"><span class="line-number"></span>Initial State <span class="hljs-symbol">:</span> The ATM is ready. The ATM has a card.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>The user requests a replacement card from the bank officer.</span><span class="line"><span class="line-number"></span>The bank officer provides the replacement card to the user.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>Final State <span class="hljs-symbol">:</span> The ATM is ready. The user has the card.</span></code></pre>
+
+
+<div class="north span-100 text-08 code-reveal-fast">
+
+<br>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="0, zoom-16" data-fragment-index="0"><strong><em>(Story that Restores the State)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="1, zoom-11" data-fragment-index="1"><strong><em>(initial state)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="6, zoom-11" data-fragment-index="2"><strong><em>(final state)</em></strong></span>
+
+</div>
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: black"><strong><em>Actions —&gt; Atomic Actions —&gt;<br>Flow of Actions —&gt; Sequence —&gt; Concurrency -&gt; Flow Condition -&gt; Alternative -&gt;<br>Repetition -&gt; Story -&gt; Missing Interactions -&gt; Missing Action Pairs -&gt; Missing Paths</em></strong></span>
+
+</div>
+
+<div class="south-west span-100 zoom-08">
+
+<span style="color: black"><strong><em>recovery story</em></strong></span>
+<br>
+<br>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Story Decomposition</em></strong></span>
+
+
+<div class="west span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">rule 4</span></div><p id="boxed-text">Discover Missing Resources</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35 fragment" data-fragment-index="1">
+
+<div id="boxed-text-box" class="bg-yellow rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">analyze</span></div><p id="boxed-text"><strong><em>find all incomplete producer / consumer interactions</em></strong></p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt; Sequence —&gt;<br>Concurrency -&gt; Flow Condition -&gt; Alternative -&gt; Repetition -&gt; Story -&gt;<br>Missing Interactions -&gt; Missing Action Pairs -&gt; Missing Paths -&gt; Missing States</em></strong></span>
+
+</div>
+
+</div></section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(90deg, yellow 0%, orange 99%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Story Decomposition</em></strong></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre><code class="hljs lang-Excel zoom-06 span-150"><span class="line"><span class="line-number"></span>Initial State <span class="hljs-symbol">:</span> The ATM is ready. The user has a card.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>The user inserts the user's card in the ATM.</span><span class="line"><span class="line-number"></span>The ATM checks <span class="hljs-built_in">if</span> the card is valid.</span><span class="line"><span class="line-number"></span><span class="hljs-built_in">If</span> the card is valid</span><span class="line"><span class="line-number"></span>  Then</span><span class="line"><span class="line-number"></span>  Repeat</span><span class="line"><span class="line-number"></span>    A prompt for <span class="hljs-built_in">code</span> is given by the ATM to the user.</span><span class="line"><span class="line-number"></span>    The user inputs the <span class="hljs-built_in">code</span> in the ATM.</span><span class="line"><span class="line-number"></span>    The ATM checks <span class="hljs-built_in">if</span> the <span class="hljs-built_in">code</span> is valid.</span><span class="line"><span class="line-number"></span>  <span class="hljs-number">3</span> times until the <span class="hljs-built_in">code</span> is valid</span><span class="line"><span class="line-number"></span>  <span class="hljs-built_in">If</span> the <span class="hljs-built_in">code</span> is valid</span><span class="line"><span class="line-number"></span>    Then</span><span class="line"><span class="line-number"></span>    A prompt for amount is displayed by the ATM to the user.</span><span class="line"><span class="line-number"></span>    The user enters an amount in the ATM.</span><span class="line"><span class="line-number"></span>    The ATM checks <span class="hljs-built_in">if</span> the amount is valid.</span><span class="line"><span class="line-number"></span>    <span class="hljs-built_in">If</span> the amount is valid</span><span class="line"><span class="line-number"></span>      Then</span><span class="line"><span class="line-number"></span>      The ATM ejects the card to the user.</span><span class="line"><span class="line-number"></span>      The ATM prompts the user <span class="hljs-symbol">:</span> receipt?</span><span class="line"><span class="line-number"></span>      The users chooses <span class="hljs-string">"YES"</span> <span class="hljs-built_in">or</span> <span class="hljs-string">"NO."</span></span><span class="line"><span class="line-number"></span>      <span class="hljs-built_in">If</span> the user chose <span class="hljs-string">"YES"</span></span><span class="line"><span class="line-number"></span>        Then</span><span class="line"><span class="line-number"></span>        The ATM prints the receipt to the user.</span><span class="line"><span class="line-number"></span>        The ATM delivers the cash to the user.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>Final State <span class="hljs-symbol">:</span> The ATM is ready. The user has cash. The user has a card.</span></code></pre>
+
+
+<div class="north span-100 text-08 code-reveal-fast">
+
+<br>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="0, zoom-16" data-fragment-index="0"><strong><em>(Discover Missing Resources)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="03,19, zoom-20" data-fragment-index="1"><strong><em>(valid: produce / consume pair)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="24, zoom-20" data-fragment-index="2"><strong><em>(invalid: no consumer)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="25, zoom-20" data-fragment-index="3"><strong><em>(invalid: no consumer)</em></strong></span>
+
+</div>
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: black"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt; Sequence —&gt;<br>Concurrency -&gt; Flow Condition -&gt; Alternative -&gt; Repetition -&gt; Story -&gt;<br>Missing Interactions -&gt; Missing Action Pairs -&gt; Missing Paths -&gt; Missing States</em></strong></span>
+
+</div>
+
+<div class="south-west span-100 zoom-08">
+
+<span style="color: black"><strong><em>normal story</em></strong></span>
+<br>
+<br>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(90deg, yellow 0%, orange 99%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Missing Resources</em></strong></span>
+
+</div>
+
+
+
+
+
+
+
+
+<pre><code class="hljs lang-Excel zoom-10 span-150"><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>story <span class="hljs-symbol">:</span> The Bank Fills the ATM with receipt paper.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>story <span class="hljs-symbol">:</span> The Bank Fills the ATM with cash. </span><span class="line"><span class="line-number"></span>&nbsp;</span></code></pre>
+
+
+<div class="north span-100 text-08 code-reveal-fast">
+
+<br>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="0, zoom-16" data-fragment-index="0"><strong><em>(Discovered Consumer Stories)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="2, zoom-12" data-fragment-index="1"><strong><em>(missing consumer)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="5, zoom-12" data-fragment-index="2"><strong><em>(missing consumer)</em></strong></span>
+
+</div>
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: black"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt; Sequence —&gt;<br>Concurrency -&gt; Flow Condition -&gt; Alternative -&gt; Repetition -&gt; Story -&gt;<br>Missing Interactions -&gt; Missing Action Pairs -&gt; Missing Paths -&gt; Missing States</em></strong></span>
+
+</div>
+
+<div class="south-west span-100 zoom-08">
+
+<span style="color: black"><strong><em>completion stories</em></strong></span>
+<br>
+<br>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(100deg, yellow 50%, black 50%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Story Decomposition</em></strong></span>
+
+
+<div class="west span-35 fragment" data-fragment-index="0">
+
+<div id="boxed-text-box" class="bg-gold rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">rule 5</span></div><p id="boxed-text">Refinement</p></div>
+
+<p></p></div><p></p>
+<div class="east span-35 fragment" data-fragment-index="1">
+
+<div id="boxed-text-box" class="bg-yellow rounded"><div id="boxed-text-title-box"><span id="boxed-text-title">select</span></div><p id="boxed-text"><strong><em>any atomic action is a story candidate at a lower level of abstraction</em></strong></p></div>
+
+<p></p></div><p></p>
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: yellow"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;<br>Sequence —&gt; Concurrency -&gt; Flow Condition -&gt; Alternative -&gt;<br>Repetition -&gt; Story -&gt; Missing Interactions -&gt; Missing Action Pairs -&gt;<br>Missing Paths -&gt; Missing States -&gt; Missing Resources</em></strong></span>
+
+</div>
+
+</div></section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" data-background="linear-gradient(90deg, yellow 0%, orange 99%)" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<div class="north-west color-text-left">
+
+<span style="color: black"><strong><em>Story Decomposition</em></strong></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre><code class="hljs lang-Excel zoom-06 span-150"><span class="line"><span class="line-number"></span>Initial State <span class="hljs-symbol">:</span> The ATM is ready. The user has a card.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>The user inserts the user's card in the ATM.</span><span class="line"><span class="line-number"></span>The ATM checks <span class="hljs-built_in">if</span> the card is valid.</span><span class="line"><span class="line-number"></span><span class="hljs-built_in">If</span> the card is valid</span><span class="line"><span class="line-number"></span>  Then</span><span class="line"><span class="line-number"></span>  Repeat</span><span class="line"><span class="line-number"></span>    A prompt for <span class="hljs-built_in">code</span> is given by the ATM to the user.</span><span class="line"><span class="line-number"></span>    The user inputs the <span class="hljs-built_in">code</span> in the ATM.</span><span class="line"><span class="line-number"></span>    The ATM checks <span class="hljs-built_in">if</span> the <span class="hljs-built_in">code</span> is valid.</span><span class="line"><span class="line-number"></span>  <span class="hljs-number">3</span> times until the <span class="hljs-built_in">code</span> is valid</span><span class="line"><span class="line-number"></span>  <span class="hljs-built_in">If</span> the <span class="hljs-built_in">code</span> is valid</span><span class="line"><span class="line-number"></span>    Then</span><span class="line"><span class="line-number"></span>    A prompt for amount is displayed by the ATM to the user.</span><span class="line"><span class="line-number"></span>    The user enters an amount in the ATM.</span><span class="line"><span class="line-number"></span>    The ATM checks <span class="hljs-built_in">if</span> the amount is valid.</span><span class="line"><span class="line-number"></span>    <span class="hljs-built_in">If</span> the amount is valid</span><span class="line"><span class="line-number"></span>      Then</span><span class="line"><span class="line-number"></span>      The ATM ejects the card to the user.</span><span class="line"><span class="line-number"></span>      The ATM prompts the user <span class="hljs-symbol">:</span> receipt?</span><span class="line"><span class="line-number"></span>      The users chooses <span class="hljs-string">"YES"</span> <span class="hljs-built_in">or</span> <span class="hljs-string">"NO."</span></span><span class="line"><span class="line-number"></span>      <span class="hljs-built_in">If</span> the user chose <span class="hljs-string">"YES"</span></span><span class="line"><span class="line-number"></span>        Then</span><span class="line"><span class="line-number"></span>        The ATM prints the receipt to the user.</span><span class="line"><span class="line-number"></span>        The ATM delivers the cash to the user.</span><span class="line"><span class="line-number"></span>&nbsp;</span><span class="line"><span class="line-number"></span>Final State <span class="hljs-symbol">:</span> The ATM is ready. The user has cash. The user has a card.</span></code></pre>
+
+
+<div class="north span-100 text-08 code-reveal-fast">
+
+<br>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="0, zoom-16" data-fragment-index="0"><strong><em>(Refinement)</em></strong></span>
+<span class="code-presenting-annotation fragment current-only" data-code-focus="10, zoom-20" data-fragment-index="1"><strong><em>(candidate: The ATM verifies the code.)</em></strong></span>
+
+</div>
+
+<div class="south-east span-100 zoom-05 color-text-right">
+
+<span style="color: black"><strong><em>Actions —&gt; Atomic Actions —&gt; Flow of Actions —&gt;<br>Sequence —&gt; Concurrency -&gt; Flow Condition -&gt; Alternative -&gt;<br>Repetition -&gt; Story -&gt; Missing Interactions -&gt; Missing Action Pairs -&gt;<br>Missing Paths -&gt; Missing States -&gt; Missing Resources</em></strong></span>
+
+</div>
+
+<div class="south-west span-100 zoom-08">
+
+<span style="color: black"><strong><em>normal story</em></strong></span>
+<br>
+<br>
+
+</div>
+
+</section><section data-charset="utf-8" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p>Thanks</p>
+</section>
+            
+        </div>
+        
+
+<footer id="title-footer" class="footer-visible"><p id="notification" class="footer-fade">[ GitPitch @ desktop/gitpitch/desktop ]</p></footer>
+
+
+    <div class="backgrounds"><div class="slide-background present" data-background-hash="linear-gradient(180deg, black 50%, yellow 50%)nullnullnullnullnullnullnullnullnull" data-loaded="true" style="background: linear-gradient(black 50%, yellow 50%); display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" data-loaded="true" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" data-loaded="true" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: block;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(90deg, yellow 0%, orange 99%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(90deg, yellow 0%, orange 99%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(180deg, black 50%, yellow 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(black 50%, yellow 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(90deg, yellow 0%, orange 99%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(90deg, yellow 0%, orange 99%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(90deg, yellow 0%, orange 99%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(90deg, yellow 0%, orange 99%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(180deg, black 50%, yellow 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(black 50%, yellow 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(90deg, yellow 0%, orange 99%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(90deg, yellow 0%, orange 99%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(90deg, yellow 0%, orange 99%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(90deg, yellow 0%, orange 99%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(90deg, yellow 0%, orange 99%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(90deg, yellow 0%, orange 99%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(90deg, yellow 0%, orange 99%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(90deg, yellow 0%, orange 99%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(90deg, yellow 0%, orange 99%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(90deg, yellow 0%, orange 99%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(90deg, yellow 0%, orange 99%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(90deg, yellow 0%, orange 99%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(90deg, yellow 0%, orange 99%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(90deg, yellow 0%, orange 99%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(90deg, yellow 0%, orange 99%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(90deg, yellow 0%, orange 99%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(90deg, yellow 0%, orange 99%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(90deg, yellow 0%, orange 99%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(90deg, yellow 0%, orange 99%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(90deg, yellow 0%, orange 99%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(90deg, yellow 0%, orange 99%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(90deg, yellow 0%, orange 99%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(100deg, yellow 50%, black 50%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(100deg, yellow 50%, black 50%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" data-background-hash="linear-gradient(90deg, yellow 0%, orange 99%)nullnullnullnullnullnullnullnullnull" style="background: linear-gradient(90deg, yellow 0%, orange 99%); display: none;"><div class="slide-background-content"></div></div><div class="slide-background future" style="display: none;"><div class="slide-background-content"></div></div></div><div class="progress" style="display: block;"><span style="width: 0px;"></span></div><aside class="controls" data-controls-layout="bottom-right" data-controls-back-arrows="faded" style="display: block;"><button class="navigate-left" aria-label="previous slide" disabled="disabled"><div class="controls-arrow"></div></button><button class="navigate-right enabled fragmented highlight" aria-label="next slide"><div class="controls-arrow"></div></button><button class="navigate-up" aria-label="above slide" disabled="disabled"><div class="controls-arrow"></div></button><button class="navigate-down" aria-label="below slide" disabled="disabled"><div class="controls-arrow"></div></button></aside><div class="slide-number" style="display: block;"><a href="http://localhost:9000/gitpitch/desktop?p=decomposing-stories#/"><span class="slide-number-a">1</span><span class="slide-number-delimiter">/</span><span class="slide-number-b">41</span></a></div><div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div><div class="pause-overlay"><button class="resume-button">Resume presentation</button></div><div id="aria-status-div" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">
+
+
+
+
+{De}Composing
+
+
+
+
+
+Stories
+
+
+
+
+
+</div></div>
+    
+    
+    
+
+    <script src="./decomposing-user-stories_files/reveal.js"></script>
+    <script src="./decomposing-user-stories_files/jquery.min.js"></script>
+    
+    <script src="./decomposing-user-stories_files/asciinema-player.js"></script>
+    
+
+    
+
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            controlsLayout: 'bottom-right',
+            embedded: true,
+            margin: 0.0,
+            showNotes: false,
+            transition: 'none',
+            backgroundTransition: 'none',
+            autoSlide: 0,
+            loop: false,
+            center: true,
+            rtl: false,
+            shuffle: false,
+            mouseWheel: false,
+            
+            controlsTutorial: true,
+            
+            slideNumber: 'c/t', // slideNumber: false,
+            history: true,
+            
+            
+            
+            dependencies: [
+                { src: "/assets/libs/reveal.js/3.8.0/plugin/markdown/marked.js",
+                  condition: function() {
+                    return !!document.querySelector( '[data-markdown]' );
+                  }},
+                { src: "/assets/libs/reveal.js/3.8.0/plugin/markdown/markdown.js",
+                condition: function() {
+                  return !!document.querySelector( '[data-markdown]' );
+                }},
+                
+                
+                
+                { src: "/assets/libs/reveal.js/3.8.0/plugin/notes/notes.js",
+                  async: true },
+                
+                
+                { src: '/assets/libs/highlight.js/9.15.8/highlight.js', async: true },
+                { src: '/assets/libs/highlight.js/9.15.8/reveal-code-focus-0619-mod.js',
+                  async: true,
+                  callback: function() {
+                    RevealCodeFocus();
+                  }
+                },
+                
+                { src: "/assets/libs/js/twitter-embed-widgets.js", async: true },
+                
+                
+            ]
+        });
+
+        Reveal.addEventListener('ready', function(evt) {
+
+          if(typeof twtter !== "undefined") {
+              twttr.widgets.load();
+          }
+
+          upgradeAnchors();
+
+          if (evt.indexh === 0 && evt.indexv === 0) {
+            pushHelpNotification();
+          } else {
+            pushFootnoteNotification();
+          }
+
+          // Force refresh to workaround Reveal.js 3.8.0
+          // first render problem re. scrollHeight calc
+          // for slides with non-text (image) content.
+          setTimeout(Reveal.layout, 500);
+        });
+
+        Reveal.addEventListener('menu-ready', function(evt) {
+            manageMenuPolicy();
+        });
+
+        Reveal.addEventListener('slidechanged', function(evt) {
+          if (evt.indexh === 0 && evt.indexv === 0) {
+            pushHelpNotification();
+          } else {
+            pushFootnoteNotification();
+          }
+        });
+
+        Reveal.configure({
+            keyboard: {
+                88: function() { // bind "x" key to "select" code block content
+
+                    var currentSlide = Reveal.getCurrentSlide();
+                    var preBlock = $(currentSlide).find("pre");
+
+                    if(preBlock.length > 0) {
+
+                        if (window.getSelection) {
+                            var range = document.createRange();
+                            range.selectNodeContents(preBlock[0]);
+                            var selection = window.getSelection();
+                            selection.removeAllRanges();
+                            selection.addRange(range);
+                        }
+                    }
+                }
+            }
+        });
+
+        function enterFullscreen() {
+            Reveal.triggerKey(70);
+        };
+
+        function enterOverview() {
+            Reveal.toggleOverview();
+        };
+
+        function enterBlackout() {
+            Reveal.togglePause();
+        };
+
+        function enterHelp() {
+          Reveal.toggleHelp();
+        }
+
+        function enableEvents() {
+            Reveal.addEventListeners();
+        };
+
+        function disableEvents() {
+            Reveal.removeEventListeners();
+        };
+
+        function manageMenuPolicy() {
+            if(RevealMenu && RevealMenu.isOpen()) {
+                RevealMenu.toggle();
+            }
+        }
+
+        function upgradeAnchors() {
+            Array.from(document.getElementsByTagName('a')).forEach($link => {
+              if ($link.hostname !== window.location.hostname) {
+                $link.setAttribute('rel', 'noopener noreferrer');
+                $link.setAttribute('target', '_blank');
+              }
+            });
+        }
+
+    </script>
+
+    
+    <script>
+        Reveal.configure({
+            keyboard: { 68: generators }
+        });
+        function generators() {
+            window.location.href =
+                "/gitpitch/desktop/generators" + document.location.search;
+        }
+    </script>
+
+    
+
+<script>
+    function pushNotification(msg, fade) {
+      var footer = document.getElementById('title-footer')
+      var notification = document.getElementById('notification')
+      if(window.innerWidth < 700) {
+        footer.className = "footer-hidden";
+      } else {
+          footer.className = "footer-visible";
+          if(fade) {
+            notification.className = "footer-fade";
+            notification.innerHTML = msg;
+          } else {
+            notification.className = "footer-hard";
+            notification.innerHTML = msg;
+          }
+      }
+    };
+
+    function pushFootnoteNotification() {
+      
+        pushNotification("[ GitPitch @ desktop/gitpitch/desktop ]", true);
+      
+    }
+
+    
+      function pushHelpNotification() {
+        pushFootnoteNotification();
+      }
+    
+
+    function pushCodePresentingStepNotification(step, frags) {
+      pushNotification("Code Presenting - Step " + step + " / " + frags, true);
+    }
+</script>
+
+
+
+
+
+<div id="dji-ttq-modal" style="display: none; position: fixed; inset: 0px; background-color: rgba(0, 0, 0, 0.5); z-index: 2147483608;"></div><dji-qb-verify-account></dji-qb-verify-account><iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;" src="./decomposing-user-stories_files/saved_resource.html"></iframe><iframe scrolling="no" frameborder="0" allowtransparency="true" src="./decomposing-user-stories_files/widget_iframe.68dbfddc56b3f0522044700c1abcd1dc.html" title="Twitter settings iframe" style="display: none;"></iframe><div id="dji-sru-busy-state"></div><dji-sru-distraction></dji-sru-distraction><div id="dji-sru-screen-selection"><div id="dji-sru-x-line"></div><div id="dji-sru-y-line"></div><div id="dji-sru-crosshair"></div><div id="dji-sru-overlay-top" class="dji-sru-overlay-child"></div><div id="dji-sru-overlay-left" class="dji-sru-overlay-child"></div><div id="dji-sru-overlay-selection"><div class="dji-sru-close-btn"></div><div id="dji-sru-ocr-content" tabindex="0"></div></div><div id="dji-sru-overlay-right" class="dji-sru-overlay-child"></div><div id="dji-sru-overlay-bottom" class="dji-sru-overlay-child"></div></div><div dji-sru-rewordify-popup="true"><div class="dji-sru-close-btn"></div><div dji-sru-rewordify-body="true" tabindex="0"><div dji-non-draggable="true"></div></div><div class="dji-geom-ctrl-resize-top"></div><div class="dji-geom-ctrl-resize-bottom"></div><div class="dji-geom-ctrl-resize-left"></div><div class="dji-geom-ctrl-resize-right"></div><div class="dji-geom-ctrl-resize-top-left"></div><div class="dji-geom-ctrl-resize-top-right"></div><div class="dji-geom-ctrl-resize-bottom-right"></div><div class="dji-geom-ctrl-resize-bottom-left"></div><div class="geomCtrlContainerOverlay"></div></div><div dji-sru-rewordify-popup="true"><div class="dji-sru-close-btn"></div><div dji-sru-rewordify-body="true" tabindex="0"><div dji-non-draggable="true"></div></div><div class="dji-geom-ctrl-resize-top"></div><div class="dji-geom-ctrl-resize-bottom"></div><div class="dji-geom-ctrl-resize-left"></div><div class="dji-geom-ctrl-resize-right"></div><div class="dji-geom-ctrl-resize-top-left"></div><div class="dji-geom-ctrl-resize-top-right"></div><div class="dji-geom-ctrl-resize-bottom-right"></div><div class="dji-geom-ctrl-resize-bottom-left"></div><div class="geomCtrlContainerOverlay"></div></div></body><div id="vimeo-record-extension"></div><loom-container id="lo-engage-ext-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><dji-sru id="__dji_sru_main_container"></dji-sru></html>
